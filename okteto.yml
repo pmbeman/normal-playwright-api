@@ -1,6 +1,7 @@
-name: normal-playwright-api
+#name: normal-playwright-api
+name: dev
 command: bash
-sync:
-- .:/user/src/app
+  #sync:
+  #- .:/user/src/app
 forward:
-- 8080:8080
+- 80:8080
