@@ -27,4 +27,4 @@ COPY --from=build-image ${FUNCTION_DIR} ${FUNCTION_DIR}
 ENV PORT=80
 EXPOSE ${PORT}
 
-CMD gunicorn main:app
+CMD python -m gunicorn main:app
