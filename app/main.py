@@ -85,6 +85,7 @@ def playwright():
         'result': result,
     }
 
-# Create the main driver function
-app.run(host=os.getenv('IP', '0.0.0.0'), 
-        port=int(os.getenv('PORT', 9000)))
+if __name__ == "main":
+    # Create the main driver function
+    app.run(host=os.getenv('IP', '0.0.0.0'), 
+            port=int(os.getenv('PORT', 9000)))
