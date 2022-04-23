@@ -3,7 +3,7 @@
 
 #Import the flask module
 from wrapt_timeout_decorator import *
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from playwright.sync_api import sync_playwright
 from playwright_stealth import stealth_sync
 import base64
@@ -80,10 +80,10 @@ def playwright():
         traceback.print_exc()
         status_code = 500
 
-    return {
-        'code': status_code,
-        'result': result,
-    }
+    return jsonify({
+                    'code': status_code,
+                    'result': result,
+                  })
 
 if __name__ == "__main__":
     # Create the main driver function
@@ -91,4 +91,3 @@ if __name__ == "__main__":
             port    = int(os.getenv('PORT', 9000)),
             debug   = True,
            )
-    #app.run()

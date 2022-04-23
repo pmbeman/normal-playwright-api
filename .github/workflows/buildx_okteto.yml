@@ -1,4 +1,10 @@
-on: [push]
+on:
+  push:
+    branches:    
+      - main
+      - master
+      - 'releases/**'
+
 
 name: Deploy to Okteto.
 
@@ -7,6 +13,10 @@ jobs:
   devflow:
     runs-on: ubuntu-latest
     steps:
+
+    # Check-out your repository.
+    - name: Checkout
+      uses: actions/checkout@v2
     
     - uses: okteto/context@latest
       with:
