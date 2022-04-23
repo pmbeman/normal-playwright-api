@@ -85,5 +85,6 @@ def playwright():
         'result': result,
     }
 
-#Calls the run method, runs the app on port 80
-app.run(host='0.0.0.0', port='80')
+# Create the main driver function
+port = int(os.environ.get("PORT", 5000)) # <-----
+app.run(host='0.0.0.0', port=port)       # <-----
