@@ -17,10 +17,17 @@ jobs:
     # Check-out your repository.
     - name: Checkout
       uses: actions/checkout@v2
+
+    - id: env
+      run: | 
+        echo "REPOSITORY_NAME=$(basename '${{ github.repository }}' | awk -F '.git' '{print tolower($1)}')" >> $GITHUB_ENV
     
     - uses: okteto/context@latest
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
+        namespace: ${{ env.REPOSITORY_NAME }}
     
     - name: "Build"
       uses: okteto/build@latest
+      with:
+        tag: okteto.dev/app:${{ github.sha }}
