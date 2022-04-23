@@ -17,6 +17,7 @@ COPY app/* ${FUNCTION_DIR}/
 RUN python -m pip install -r ${FUNCTION_DIR}/requirements.txt 
 
 
-EXPOSE 5000
+ENV PORT=8080
+EXPOSE ${PORT}
 
-CMD python -m gunicorn main:app
+CMD python -m gunicorn -b :$PORT main:app
