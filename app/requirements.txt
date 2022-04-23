@@ -12,3 +12,4 @@ urllib3==1.25.8
 html2text==2020.1.16
 PySocks==1.7.1
 timeout==0.1.2
+MarkupSafe==2.0.1
