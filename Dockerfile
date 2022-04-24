@@ -20,4 +20,4 @@ RUN python -m pip install -r ${FUNCTION_DIR}/requirements.txt
 ENV PORT=8080
 EXPOSE ${PORT}
 
-CMD python -m gunicorn -b :$PORT main:app
+CMD python -m gunicorn -w 4 -b :$PORT main:app
