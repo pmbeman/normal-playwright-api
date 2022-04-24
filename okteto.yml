@@ -3,4 +3,4 @@ command: bash
 #sync:
 #- .:/user/src/app
 forward:
-- 8080:8080
+- 8888:8080
