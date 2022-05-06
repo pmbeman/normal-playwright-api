@@ -20,7 +20,6 @@ jobs:
          - sub: eu
          #  other: xx
     steps:
-      # Check-out your repository.
       - name: Checkout
         uses: actions/checkout@v2
 
