@@ -80,6 +80,9 @@ def playwright():
         traceback.print_exc()
         status_code = 500
 
+    try:browser.close()
+    except:pass
+
     return jsonify({
                     'code': status_code,
                     'result': result,
