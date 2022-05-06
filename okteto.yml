@@ -2,5 +2,5 @@ name: normal-playwright-api
 command: bash
 #sync:
 #- .:/user/src/app
-forward:
-- 80:8080
+#forward:
+#- 8080:8080
