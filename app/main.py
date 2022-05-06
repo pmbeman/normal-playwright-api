@@ -77,7 +77,8 @@ def playwright():
             print(run)
             exec(run)
     except Exception as e:
-        result=str(e)
+        #result=str(e)
+        result=traceback.format_exc()
         traceback.print_exc()
         status_code = 500
 
