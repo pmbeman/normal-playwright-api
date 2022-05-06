@@ -61,6 +61,7 @@ def playwright():
                     print(f"webkit using [{device_name}]")
                     device      = playwright.devices[device_name]
                     context     = browser.new_context(**device,)
+                context.clear_cookies()
                 page = context.new_page()
                 if stealth:=request.form.get('stealth', default=False):
                     print(stealth)
